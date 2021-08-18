@@ -1,0 +1,31 @@
+<html style='background-color: #182841'>
+
+<head>
+<title>ARMS Chatroom </title>
+</head>
+
+
+<?php
+session_start();
+?>
+<body>
+<word style='color: #BDB76B'>
+
+<body align="middle" valign"bottom">
+
+<form method="POST">
+<txt style="font: 15px 'Trebuchet MS', sans-serif;">Please Select a Channel:</txt></br>
+<select name='Room'>
+<option>(Select Channel)</option>
+<option value='rooms/room.php'>General</option>
+<option value='rooms/code.php'>Programming</option>
+<option value='rooms/work.php'>Classwork</option>
+<option value='rooms/offtopic.php'>Off topic</option>
+</select>
+<input type="submit" value="Enter" style="font: 13px 'Trebuchet MS', sans-serif; color:#BDB76B; background-color:#5A5A5A; border-radius:3px;" onclick="<?php if (ISSET($_POST['Room'])) { if ($_POST['Room'] === 'rooms/room.php') { header("Location: rooms/general/landing.php"); } elseif ($_POST['Room'] === 'rooms/code.php') { header("Location: rooms/code/landing.php"); } elseif ($_POST['Room'] === 'rooms/work.php') { header("Location: rooms/work/landing.php"); } elseif ($_POST['Room'] === 'rooms/offtopic.php') { header("Location: rooms/offtopic/landing.php"); } } ?>"/>
+</form>
+<img src="images/ar-ms.png" alt="warriors">
+
+</body>
+
+</html>
